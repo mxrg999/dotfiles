@@ -24,6 +24,13 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("v", "<leader>y", "+y")
 vim.keymap.set("n", "<leader>y", "+y")
 
+-- Quick save and Exit
+vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
+
+-- Open command line in nvim
+vim.keymap.set("n", "<leader>!", ":! ")
+
 -- Copy to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
