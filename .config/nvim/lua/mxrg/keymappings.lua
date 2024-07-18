@@ -15,7 +15,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 -- paste over, save what was pasted
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -26,10 +25,12 @@ vim.keymap.set("n", "<leader>y", "+y")
 
 -- Quick save and Exit
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
-vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
+vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>")
+vim.keymap.set("n", "<leader>qq", "<cmd>q<CR>")
 
 -- Open command line in nvim
 vim.keymap.set("n", "<leader>!", ":! ")
+vim.keymap.set("n", "<leader>!!", ":! cargo run<CR>")
 
 -- Copy to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -40,8 +41,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Block Q
 vim.keymap.set("n", "Q", "<nop>")
-
-vim.keymap.set("n", "<C-.", "<cmd>w<CR>")
 
 -- Format fuffer
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
