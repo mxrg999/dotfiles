@@ -28,3 +28,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "110"
+
+-- Setting for Obsidian plugin to work
+vim.opt.conceallevel = 2
