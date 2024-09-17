@@ -29,7 +29,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "pylsp",
-                --"gopls",
+                "clangd",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -81,6 +81,18 @@ return {
                                 }
                             }
                         }
+                    }
+                end,
+                ["clangd"] = function()
+                    require("lspconfig").clangd.setup {
+                        capabilities = capabilities,
+                        cmd = {
+                            "clangd",
+                            "--background-index",
+                            "--suggest-missing-includes",
+                            "--clang-tidy",
+                            "--header-insertion=iwyu",
+                        },
                     }
                 end,
             }
