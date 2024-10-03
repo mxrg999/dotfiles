@@ -23,6 +23,8 @@ alias ekitty="nvim ~/.config/kitty/kitty.conf"
 alias envim="nvim ~/.config/nvim/lua/mxrg"
 alias etide="tide configure"
 alias essh="nvim ~/.ssh/config"
+alias etmux="nvim ~/.config/tmux/tmux.conf"
+alias rtmux="tmux source ~/.config/tmux/tmux.conf"
 alias e="exit"
 
 # Tools
@@ -45,6 +47,7 @@ alias h="cd ~ && greeting"
 alias cd.="cd .."
 alias cdgit="cd ~/Documents/GitHub/"
 alias cdrust="cd ~/Documents/GitHub/my-rust-repo"
+alias cdod="cd ~/Documents/GitHub/OD-Script"
 
 # Git
 alias gs="git status"
