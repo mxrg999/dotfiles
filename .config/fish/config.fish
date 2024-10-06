@@ -43,6 +43,7 @@ alias obsidian="nohup flatpak run md.obsidian.Obsidian"
 alias home="cd ~ && greeting"
 alias h="cd ~ && greeting"
 alias cd.="cd .."
+alias cd..="cd .. && cd .."
 alias cdgit="cd ~/Documents/GitHub/"
 alias cdrust="cd ~/Documents/GitHub/my-rust-repo"
 
@@ -60,7 +61,12 @@ function prunedocker
   docker stop $(docker ps -a -q)
   docker system prune -a --volumes
 end
-
+function lsh
+    cd ~/Documents/DV/os/OS-lab1/code 
+    cmake -Bbuild
+    cmake --build build
+    ./build/lsh
+end
 
 # Thales specific
 alias aptupd="sudo apt update -y"
