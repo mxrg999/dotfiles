@@ -30,6 +30,7 @@ return {
                 "rust_analyzer",
                 "pylsp",
                 "clangd",
+                "jdtls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -101,6 +102,31 @@ return {
                             },
                         },
                     }
+                end,
+                ["jdtls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.jdtls.setup({
+                        capabilities = capabilities,
+                        cmd = { "jdtls" }, -- Ensure jdtls is in your PATH or specify the full path
+                        root_dir = require("lspconfig.util").root_pattern(".git", "pom.xml", "build.gradle"),
+                        settings = {
+                            java = {
+                                format = {
+                                    enabled = true,
+                                    settings = {
+                                        -- url = vim.fn.stdpath("config") .. "/java/eclipse-formatter.xml", -- Optional, use your formatter
+                                        profile = "GoogleStyle"
+                                    }
+                                },
+                                saveActions = {
+                                    organizeImports = true,
+                                },
+                            },
+                        },
+                        init_options = {
+                            bundles = {},
+                        },
+                    })
                 end,
             }
         })
