@@ -103,3 +103,22 @@ vim.api.nvim_create_user_command("CopilotToggle", function()
 	copilot_on = not copilot_on
 end, { nargs = 0 })
 vim.keymap.set("", "<M-p>", ":CopilotToggle<CR>", { noremap = true, silent = true })
+
+
+
+-- Toggle wrap
+function ToggleWrap()
+  if vim.wo.wrap then
+    vim.wo.wrap = false
+    vim.notify("Wrap disabled", vim.log.levels.INFO)
+  else
+    vim.wo.wrap = true
+    vim.notify("Wrap enabled", vim.log.levels.INFO)
+  end
+end
+
+-- Alt + z to toggle wrap
+vim.api.nvim_set_keymap('n', '<A-z>', ':lua ToggleWrap()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-z>', '<C-o>:lua ToggleWrap()<CR>', { noremap = true, silent = true })
+
+
