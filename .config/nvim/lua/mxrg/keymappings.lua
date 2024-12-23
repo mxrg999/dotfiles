@@ -121,4 +121,9 @@ end
 vim.api.nvim_set_keymap('n', '<A-z>', ':lua ToggleWrap()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<A-z>', '<C-o>:lua ToggleWrap()<CR>', { noremap = true, silent = true })
 
+-- Toggle search highlight
+vim.keymap.set("n", "<leader>uh", function()
+    vim.opt.hlsearch = not vim.opt.hlsearch:get()
+    print("hlsearch: " .. (vim.opt.hlsearch:get() and "ON" or "OFF"))
+end, { desc = "Toggle search highlight" })
 
